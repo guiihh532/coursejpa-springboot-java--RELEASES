@@ -1,14 +1,21 @@
 package com.gomlek.coursetwo.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
+@Table(name = "tb_user")
 public class User implements Serializable{
 
 	
@@ -22,11 +29,12 @@ public class User implements Serializable{
 	private String phone;
 	private String password;
 	
+	@OneToMany(mappedBy = "client")
+	//@JoinColumn(name = "orders_id")
+	private List<Order> orders = new ArrayList<>();
 	
 	public User() {
 	}
-	
-	
 	
 	public User(Long id, String name, String email, String phone, String password) {
 		super();
@@ -70,7 +78,10 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-
+	@JsonIgnore
+	public List<Order> getOrders() {
+		return orders;
+	}
 
 	@Override
 	public int hashCode() {
@@ -79,8 +90,6 @@ public class User implements Serializable{
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -98,7 +107,6 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
+
 	
 }
