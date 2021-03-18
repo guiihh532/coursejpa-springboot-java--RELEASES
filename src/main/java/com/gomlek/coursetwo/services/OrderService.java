@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gomlek.coursetwo.entities.Order;
 import com.gomlek.coursetwo.repositories.OrderRepository;
-import com.gomlek.coursetwo.services.exceotions.ResourceNotFoundException;
+import com.gomlek.coursetwo.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class OrderService {

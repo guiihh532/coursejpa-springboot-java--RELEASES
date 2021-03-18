@@ -1,4 +1,4 @@
-package com.gomlek.coursetwo.services.exceotions;
+package com.gomlek.coursetwo.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException{
 

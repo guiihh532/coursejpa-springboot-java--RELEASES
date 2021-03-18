@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gomlek.coursetwo.entities.Category;
 import com.gomlek.coursetwo.repositories.CategoryRepository;
-import com.gomlek.coursetwo.services.exceotions.ResourceNotFoundException;
+import com.gomlek.coursetwo.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CategoryService {
